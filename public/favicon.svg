@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Multi-chain key icon">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2563eb" />
+      <stop offset="100%" stop-color="#8b5cf6" />
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="16" fill="url(#bg)" />
+  <path
+    d="M36 16a12 12 0 0 0-12 12c0 2.2.57 4.27 1.55 6.05L17.2 42.4a2 2 0 0 0 0 2.83l1.57 1.57a2 2 0 0 0 2.83 0l2.36-2.36 2.36 2.36a2 2 0 0 0 2.83 0l1.57-1.57a2 2 0 0 0 0-2.83l-2.12-2.12A11.96 11.96 0 0 0 36 40a12 12 0 1 0 0-24Zm0 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12Z"
+    fill="#f8fafc"
+  />
+  <circle cx="36" cy="28" r="4" fill="#bfdbfe" />
+</svg>
