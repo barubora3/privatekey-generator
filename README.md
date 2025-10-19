@@ -17,6 +17,7 @@ Open `http://localhost:3000` to use the app. Run through an HTTP(S) server so th
 - "Generate New Keys" regenerates every key only after modal confirmation.
 - Private keys and addresses are displayed immediately with one-click copy helpers.
 - Quick links to each chain’s block explorer (mainnet & testnet) so you can inspect balances and activity instantly.
+- Built-in Vercel Analytics hook—enable analytics in your Vercel project to capture traffic without extra setup.
 - Each chain card surfaces its key-derivation curve and entropy source for added transparency.
 - All cryptographic work and storage happen client-side; no data leaves the browser.
 
