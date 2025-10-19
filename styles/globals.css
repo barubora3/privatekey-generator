@@ -23,6 +23,38 @@ body {
   color: var(--text);
 }
 
+.app-footer {
+  background: #0f172a;
+  color: #e2e8f0;
+  padding: 1.75rem 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem 1.5rem;
+  font-size: 0.9rem;
+}
+
+.app-footer span {
+  font-weight: 500;
+}
+
+.footer-links {
+  display: inline-flex;
+  gap: 1.25rem;
+}
+
+.footer-links a {
+  color: #93c5fd;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.footer-links a:hover,
+.footer-links a:focus-visible {
+  text-decoration: underline;
+}
+
 .app-header {
   background: linear-gradient(135deg, #1d4ed8, #9333ea);
   color: #fff;

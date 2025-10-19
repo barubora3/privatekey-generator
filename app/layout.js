@@ -46,6 +46,21 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         {children}
+        <footer className="app-footer">
+          <span>Built by tenden.</span>
+          <nav aria-label="Author links" className="footer-links">
+            <a href="https://twitter.com/ytenden" target="_blank" rel="noopener noreferrer">
+              Twitter
+            </a>
+            <a
+              href="https://github.com/barubora3/privatekey-generator"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GitHub Repository
+            </a>
+          </nav>
+        </footer>
         <Analytics />
       </body>
     </html>

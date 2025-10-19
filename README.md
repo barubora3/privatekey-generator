@@ -1,25 +1,40 @@
 # Multi-chain Private Key Generator
 
-A Next.js application for generating developer sandbox keys and addresses for five networks: EVM (Ethereum), Solana, Bitcoin, Sui, and TON. All generated credentials remain on the client and are persisted in the browser’s `localStorage`.
+The Multi-chain Private Key Generator is a browser-based tool for quickly creating disposable development credentials across five blockchains: Ethereum-compatible EVM networks, Solana, Bitcoin, Sui, and TON. Keys are generated locally, never leave your device, and persist only in your browser’s `localStorage` so you can pick up where you left off.
 
-## Getting Started
+## Live Demo
 
-```bash
-npm install
-npm run dev
-```
+Visit the hosted version at **https://privatekey-generator.vercel.app** (client-side only; no server stores your keys).
 
-Open `http://localhost:3000` to use the app. Run through an HTTP(S) server so the browser can reach the public RPC endpoints.
+## Quick Start
 
-## Features
+1. Install dependencies and launch the dev server:
 
-- Loads previously saved keys on revisit; click "Generate New Keys" to create a fresh multi-chain bundle.
-- "Generate New Keys" regenerates every key only after modal confirmation.
-- Private keys and addresses are displayed immediately with one-click copy helpers.
-- Quick links to each chain’s block explorer (mainnet & testnet) so you can inspect balances and activity instantly.
-- Built-in Vercel Analytics hook—enable analytics in your Vercel project to capture traffic without extra setup.
-- Each chain card surfaces its key-derivation curve and entropy source for added transparency.
-- All cryptographic work and storage happen client-side; no data leaves the browser.
+   ```bash
+   npm install
+   npm run dev
+   ```
+
+2. Open `http://localhost:3000` in your browser. Serve the app over HTTP(S) so the client can contact public RPC endpoints without CORS issues.
+
+3. Click **Generate New Keys** to create a fresh bundle whenever you start a new testing session.
+
+## How to Use the App
+
+1. On first load, the app fetches the required blockchain libraries in your browser. A status banner keeps you informed.
+2. Press **Generate New Keys** to build a complete set of addresses and private keys for every supported chain. If keys already exist, a confirmation modal prevents accidental overwrites.
+3. Use the copy icons to place addresses and private keys on your clipboard instantly. Each chain card also links to mainnet and testnet block explorers so you can inspect balances right away.
+4. Revisit the page later to reuse the same keys; they are restored from `localStorage`. Generate again any time to replace them.
+
+## Key Features
+
+- 🔐 **Local-first security** – All cryptographic work runs in your browser. No keys are transmitted or stored remotely.
+- 🧰 **Multi-chain coverage** – Generates credentials for EVM (Ethereum), Solana, Bitcoin, Sui, and TON in one click.
+- ♻️ **Session persistence** – Previously created keys automatically reload on return visits.
+- ✅ **Safety guardrails** – Modal confirmation prevents unwanted overwrites of stored keys.
+- 📋 **Copy helpers & explorer links** – Copy buttons and curated explorer shortcuts make testing workflows faster.
+- 📊 **Analytics ready** – Includes the Vercel Analytics hook; enable it in your project settings for traffic insights.
+- 🔎 **Transparent metadata** – Each chain card lists the derivation curve and entropy source used for key creation.
 
 ## Production Build
 
@@ -28,11 +43,11 @@ npm run build
 npm run start
 ```
 
-The production bundle is emitted to `.next/` and served via `npm run start`.
+The optimized bundle lives in `.next/` and is served with `npm run start`.
 
-## Important Notes
+## Security & Limitations
 
-- Keys are generated entirely in the browser and saved to `localStorage`. Treat them as disposable and never use them with production funds.
-- Private keys are shown in the UI for development convenience—never paste them into production tooling or wallets.
-- Explorer links lead to third-party services (Etherscan, Solana Explorer, Mempool.space, Sui Explorer, TON Explorer). Rate limits or downtime may affect availability.
-- This tool is intended for development and testing only. Do not manage real assets with the generated keys.
+- Keys are intended for **development and testing only**. Never fund these wallets with real assets.
+- Data lives exclusively in the browser’s `localStorage`. Clear it or generate new keys when rotating credentials.
+- Explorer shortcuts point to third-party services (Etherscan, Solana Explorer, Mempool.space, Sui Explorer, TON Explorer). Availability and rate limits depend on those providers.
+- Because everything runs client-side, you need a modern browser with clipboard permissions enabled for copy helpers.
