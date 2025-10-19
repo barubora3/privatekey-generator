@@ -1,26 +1,37 @@
-# マルチチェーン秘密鍵ジェネレーター
+# Multi-chain Private Key Generator
 
-ブラウザだけで動作する開発者向けの秘密鍵・アドレス生成ツールです。EVM (Ethereum)、Solana、Bitcoin、Sui、TON の 5 チェーンに対応し、生成した鍵情報はブラウザの `localStorage` に保存されます。
+A Next.js application for generating developer sandbox keys and addresses for five networks: EVM (Ethereum), Solana, Bitcoin, Sui, and TON. All generated credentials remain on the client and are persisted in the browser’s `localStorage`.
 
-## 特徴
+## Getting Started
 
-- ページにアクセスすると保存済みの鍵を読み込み、存在しない場合は自動で新規生成
-- 「新しい鍵を生成」ボタンで全チェーンの鍵を更新（保存済みの鍵はモーダル確認後に上書き）
-- 「保存をクリア」ボタンで localStorage に保存した鍵を削除
-- 各チェーンごとにアドレス・秘密鍵・ネイティブトークン残高（API から取得可能な場合）を表示
-- すべての処理がクライアントサイドで完結
+```bash
+npm install
+npm run dev
+```
 
-## 使い方
+Open `http://localhost:3000` to use the app. Run through an HTTP(S) server so the browser can reach the public RPC endpoints.
 
-1. `index.html` をブラウザで開きます。ローカル開発では任意の HTTP サーバー（例: `python -m http.server`）で公開してください。
-2. 初回アクセスまたは保存済みデータが無い場合、5 チェーンすべての鍵が自動生成されます。
-3. 既存の鍵を使い続けたい場合はそのままページを再訪してください。localStorage に保存された鍵が復元されます。
-4. 新しい鍵を作りたい場合は「新しい鍵を生成」ボタンを押し、モーダルで上書きを確定します。
-5. 「保存をクリア」ボタンで保存済みデータのみを削除することもできます。
-6. 各チェーンのカードにある「残高を取得」ボタンで、公開 RPC / API から残高を取得します（未対応のチェーンや API エラーの場合はメッセージが表示されます）。
+## Features
 
-## 注意事項
+- Loads previously saved keys on revisit; click "Generate New Keys" to create a fresh multi-chain bundle.
+- "Generate New Keys" regenerates every key only after modal confirmation.
+- Private keys and addresses are displayed immediately with one-click copy helpers.
+- Quick links to each chain’s block explorer (mainnet & testnet) so you can inspect balances and activity instantly.
+- Each chain card surfaces its key-derivation curve and entropy source for added transparency.
+- All cryptographic work and storage happen client-side; no data leaves the browser.
 
-- 生成した鍵はブラウザの `localStorage` に保存されます。セキュリティポリシーに注意してご利用ください。
-- 残高取得は外部 API に依存しているため、CORS 制約やアクセス制限により失敗する場合があります。
-- 本ツールは開発用途を想定しています。実運用資産の管理には十分ご注意ください。
+## Production Build
+
+```bash
+npm run build
+npm run start
+```
+
+The production bundle is emitted to `.next/` and served via `npm run start`.
+
+## Important Notes
+
+- Keys are generated entirely in the browser and saved to `localStorage`. Treat them as disposable and never use them with production funds.
+- Private keys are shown in the UI for development convenience—never paste them into production tooling or wallets.
+- Explorer links lead to third-party services (Etherscan, Solana Explorer, Mempool.space, Sui Explorer, TON Explorer). Rate limits or downtime may affect availability.
+- This tool is intended for development and testing only. Do not manage real assets with the generated keys.

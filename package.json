@@ -1,0 +1,35 @@
+{
+  "name": "privatekey-generator",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@mysten/sui.js": "^0.53.0",
+    "@solana/web3.js": "^1.87.6",
+    "bitcoinjs-lib": "^6.1.0",
+    "bs58": "^5.0.0",
+    "ecpair": "^2.0.1",
+    "ethers": "^5.7.2",
+    "next": "14.2.6",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "@bitcoinerlab/secp256k1": "^1.2.0",
+    "assert": "^2.0.0",
+    "buffer": "^6.0.3",
+    "crypto-browserify": "^3.12.0",
+    "process": "^0.11.10",
+    "stream-browserify": "^3.0.0",
+    "tiny-secp256k1": "^2.2.1",
+    "tonweb": "^0.0.60",
+    "util": "^0.12.5"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "eslint-config-next": "14.2.6"
+  }
+}
